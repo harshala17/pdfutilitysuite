@@ -1,90 +1,82 @@
 <div>
-  <div class="relative isolate px-6 pt-2 lg:px-8">
-    <div
-      aria-hidden="true"
-      class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-    >
-      <div
-        style="
-          clip-path: polygon(
-            74.1% 44.1%,
-            100% 61.6%,
-            97.5% 26.9%,
-            85.5% 0.1%,
-            80.7% 2%,
-            72.5% 32.5%,
-            60.2% 62.4%,
-            52.4% 68.1%,
-            47.5% 58.3%,
-            45.2% 34.5%,
-            27.5% 76.7%,
-            0.1% 64.9%,
-            17.9% 100%,
-            27.6% 76.8%,
-            76.1% 97.7%,
-            74.1% 44.1%
-          );
-        "
-        class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-red-400 via-rose-400 to-red-600 opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"
-      ></div>
+  <div class="relative isolate px-3 lg:px-4 min-h-screen flex items-center">
+    <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+      <div class="clip-path-blob relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-red-400 via-rose-400 to-red-600 opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75">
+      </div>
     </div>
-    <div class="flex items-center justify-between py-2 sm:py-18 lg:py-26">
-      <div class="w-1/2 pr-8">
-        <h1 class="text-5xl font-semibold tracking-tight text-balance text-black sm:text-7xl">
+    <div class="w-full flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-0">
+      <div class="w-full lg:w-1/2 pl-2 sm:pl-8 lg:pl-14 pr-2 sm:pr-8 lg:pr-8 text-center lg:text-left flex flex-col items-center lg:items-start">
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-balance text-black">
+          Transform
+        </h1>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-balance text-black">
           Your Documents
         </h1>
-        <h1 class="text-5xl font-semibold tracking-tight text-balance text-red-600 sm:text-7xl">
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-balance text-red-600">
           Effortlessly
         </h1>
-        <p class="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
+        <p class="mt-6 sm:mt-8 text-base sm:text-lg lg:text-xl font-medium text-pretty text-gray-400 max-w-md">
           Convert, merge, compress, and edit PDFs with professional-grade tools. All processing
           happens securely in your browser - no uploads, no data storage, complete privacy
           guaranteed.
         </p>
-        <div class="mt-10 flex items-start justify-start gap-x-6">
-          <a
-            href="#"
-            class="rounded-md bg-gradient-to-r from-red-500 via-rose-500 to-red-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md hover:from-red-600 hover:via-rose-600 hover:to-red-700 transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
-          >
-            Explore All Tools <span aria-hidden="true">→</span>
+        <div class="mt-6 flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
+          <div
+            class="flex items-center gap-2 rounded-xl bg-white px-4 py-2 shadow-sm ring-1 ring-gray-200 hover:shadow-lg hover:ring-green-300 transition-all duration-300 cursor-pointer group relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-40 -translate-x-full group-hover:translate-x-full transition-all duration-500">
+            </div>
+            <span
+              class="material-symbols-outlined text-green-600 group-hover:scale-110 transition-transform duration-300 relative z-10">
+              encrypted
+            </span>
+            <span class="text-sm font-medium text-gray-700 relative z-10">100% Private</span>
+          </div>
+          <div
+            class="flex items-center gap-2 rounded-xl bg-white px-4 py-2 shadow-sm ring-1 ring-gray-200 hover:shadow-lg hover:ring-orange-300 transition-all duration-300 cursor-pointer group relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-40 -translate-x-full group-hover:translate-x-full transition-all duration-500">
+            </div>
+            <span
+              class="material-symbols-outlined text-orange-500 group-hover:scale-110 transition-transform duration-300 relative z-10">
+              electric_bolt
+            </span>
+            <span class="text-sm font-medium text-gray-700 relative z-10">Lightning Fast</span>
+          </div>
+          <div
+            class="flex items-center gap-2 rounded-xl bg-white px-4 py-2 shadow-sm ring-1 ring-gray-200 hover:shadow-lg hover:ring-blue-300 transition-all duration-300 cursor-pointer group relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-40 -translate-x-full group-hover:translate-x-full transition-all duration-500">
+            </div>
+            <span
+              class="material-symbols-outlined text-blue-600 group-hover:scale-110 transition-transform duration-300 relative z-10">
+              download
+            </span>
+            <span class="text-sm font-medium text-gray-700 relative z-10">Instant Download</span>
+          </div>
+        </div>
+        <div class="mt-10 flex items-start justify-center lg:justify-start gap-x-6">
+          <a href="#"
+            class="inline-flex items-center gap-2 rounded-md bg-linear-to-r from-red-500 via-rose-500 to-red-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md hover:from-red-600 hover:via-rose-600 hover:to-red-700 transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">
+            <span class="material-symbols-outlined">
+              docs
+            </span>
+            <span class="text-base font-bold">Explore All Tools</span>
+            <span class="material-symbols-outlined">
+              arrow_right_alt
+            </span>
           </a>
         </div>
       </div>
-      <div class="relative w-full h-full">
-        <img
-          src="assets/pdfutilitylandingpage.png"
-          alt="landing page image"
-          class="h-full w-full object-cover [mask-image:radial-gradient(120%_120%_at_50%_50%,black_60%,transparent_100%)]"
-        />
+      <div class="w-full lg:w-1/2 relative px-4 sm:px-0">
+        <img src="assets/landingPageSticker.png" alt="landing page image"
+          class="w-full max-w-sm sm:max-w-md lg:max-w-none h-auto object-contain mx-auto lg:mx-0 mask-[radial-gradient(120%_120%_at_50%_50%,black_60%,transparent_100%)]" />
       </div>
     </div>
-    <div
-      aria-hidden="true"
-      class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-    >
-      <div
-        style="
-          clip-path: polygon(
-            74.1% 44.1%,
-            100% 61.6%,
-            97.5% 26.9%,
-            85.5% 0.1%,
-            80.7% 2%,
-            72.5% 32.5%,
-            60.2% 62.4%,
-            52.4% 68.1%,
-            47.5% 58.3%,
-            45.2% 34.5%,
-            27.5% 76.7%,
-            0.1% 64.9%,
-            17.9% 100%,
-            27.6% 76.8%,
-            76.1% 97.7%,
-            74.1% 44.1%
-          );
-        "
-        class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-red-400 via-rose-400 to-red-600 opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"
-      ></div>
+    <div aria-hidden="true"
+      class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+      <div class="clip-path-blob relative left-[calc(50%+3rem)] aspect-1650/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-red-400 via-rose-400 to-red-600 opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75">
+      </div>
     </div>
   </div>
 </div>

@@ -5,27 +5,27 @@
 
 .tooltip {
   position: absolute;
-  top: 70px; /* Adjust to point to top left of sidebar */
+  top: 50px; /* Adjust to point to top left of sidebar */
   left: 270px; /* Just right of the 260px sidebar */
   background: white;
-  border: 1px solid #ccc;
-  padding: 8px 12px;
+  border: 3px solid #cccccc76;
+  padding: 18px 12px;
   border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 40px 18px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight:500;
   color: #333;
 }
 
 .tooltip::before {
   content: '';
   position: absolute;
-  left: -10px; /* Arrow pointing left */
+  left: -14px; /* Increased to match larger arrow */
   top: 10px;
   width: 0;
   height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 10px solid white;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 14px solid white;
 }

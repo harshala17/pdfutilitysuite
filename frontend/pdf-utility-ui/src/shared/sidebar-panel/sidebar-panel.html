@@ -1,18 +1,10 @@
 <div class="grid grid-rows-[64px_1fr] min-h-screen font-sans">
-
-  <!-- HEADER -->
-  <app-header class="z-50"></app-header>
-
-  <!-- BODY -->
-  <div class="grid grid-cols-[260px_1fr]">
-
-    <!-- Sidebar -->
-  <aside class="bg-white py-5
-             drop-shadow-[4px_0_8px_rgba(0,0,0,0.8)]
-             dark:drop-shadow-[4px_0_8px_rgba(0,0,0,0.35)]">
-
-
-      <!-- Section -->
+  <app-header class="z-50" (toggleSidebarEvent)="toggleSidebar()"></app-header>
+  <div class="grid" [ngClass]="isSidebarOpen ? 'grid-cols-[260px_1fr]' : 'grid-cols-[1fr]'">
+    @if (isSidebarOpen) {
+    <aside class="bg-white py-5
+      drop-shadow-[4px_0_8px_rgba(0,0,0,0.8)]
+      dark:drop-shadow-[4px_0_8px_rgba(0,0,0,0.35)]">
       <p class="px-5 mb-4 text-xs font-semibold tracking-wide text-gray-400 uppercase">
         Convert to PDF
       </p>
@@ -40,8 +32,8 @@
 
       <nav class="space-y-1">
         <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100">
-          <svg class="h-5 w-5 text-gray-700" viewBox="0 0 23 23" fill="none" stroke="currentColor"
-               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="h-5 w-5 text-gray-700" viewBox="0 0 23 23" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="6" height="6" rx="1.5" />
             <rect x="15" y="3" width="6" height="6" rx="1.5" />
             <rect x="9" y="15" width="6" height="6" rx="1.5" />
@@ -66,9 +58,10 @@
         </a>
       </nav>
     </aside>
-
-    <!-- Main -->
-    
-
+    @if (isHighlighted) {
+    <div class="tooltip">✨ Explore all tools here! ✨</div>
+    }
+    }
+    <app-landing-page (openSidebarEvent)="openSidebar()"></app-landing-page>
   </div>
 </div>

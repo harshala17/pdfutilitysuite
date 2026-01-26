@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -17,5 +17,11 @@ isDark = false;
     } else {
       document.documentElement.classList.remove('dark');
     }
+  }
+
+  @Output() toggleSidebarEvent = new EventEmitter<void>();
+
+  toggleSidebar() {
+    this.toggleSidebarEvent.emit();
   }
 }

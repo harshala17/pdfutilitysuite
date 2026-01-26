@@ -1,0 +1,31 @@
+.highlighted {
+  border: 1px solid red;
+  box-shadow: 0 0 15px 1px red;
+}
+
+.tooltip {
+  position: absolute;
+  top: 70px; /* Adjust to point to top left of sidebar */
+  left: 270px; /* Just right of the 260px sidebar */
+  background: white;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  left: -10px; /* Arrow pointing left */
+  top: 10px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 10px solid white;
+}

@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, EventEmitter, Output } from '@angular/core';
 import { Footer } from "../../shared/footer/footer";
 
 @Component({
@@ -9,5 +9,10 @@ import { Footer } from "../../shared/footer/footer";
   styleUrl: './landing-page.css',
 })
 export class LandingPage {
+  @Output() openSidebarEvent = new EventEmitter<void>();
 
+  openSidebar() {
+    this.openSidebarEvent.emit();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

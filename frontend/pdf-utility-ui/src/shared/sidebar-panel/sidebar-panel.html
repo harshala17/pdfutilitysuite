@@ -1,1 +1,74 @@
-<p>sidebar-panel works!</p>
+<div class="grid grid-rows-[64px_1fr] min-h-screen font-sans">
+
+  <!-- HEADER -->
+  <app-header class="z-50"></app-header>
+
+  <!-- BODY -->
+  <div class="grid grid-cols-[260px_1fr]">
+
+    <!-- Sidebar -->
+  <aside class="bg-white py-5
+             drop-shadow-[4px_0_8px_rgba(0,0,0,0.8)]
+             dark:drop-shadow-[4px_0_8px_rgba(0,0,0,0.35)]">
+
+
+      <!-- Section -->
+      <p class="px-5 mb-4 text-xs font-semibold tracking-wide text-gray-400 uppercase">
+        Convert to PDF
+      </p>
+
+      <nav class="space-y-1 mb-6">
+        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100">
+          <span class="material-symbols-outlined">docs</span>
+          <span>Excel to PDF</span>
+        </a>
+
+        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100">
+          <span class="material-symbols-outlined">table</span>
+          <span>Word to PDF</span>
+        </a>
+
+        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100">
+          <span class="material-symbols-outlined">imagesmode</span>
+          <span>Image to PDF</span>
+        </a>
+      </nav>
+
+      <p class="px-4 mb-2 text-xs font-semibold tracking-wide text-gray-400 uppercase">
+        PDF Tools
+      </p>
+
+      <nav class="space-y-1">
+        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100">
+          <svg class="h-5 w-5 text-gray-700" viewBox="0 0 23 23" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="6" height="6" rx="1.5" />
+            <rect x="15" y="3" width="6" height="6" rx="1.5" />
+            <rect x="9" y="15" width="6" height="6" rx="1.5" />
+            <path d="M6 9v3a3 3 0 003 3h6a3 3 0 003-3V9" />
+          </svg>
+          <span class="px-1">Merge PDF</span>
+        </a>
+
+        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100">
+          <span class="material-symbols-outlined">delete</span>
+          <span>Remove PDF</span>
+        </a>
+
+        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100">
+          <span class="material-symbols-outlined">swap_vert</span>
+          <span>Reorder Pages</span>
+        </a>
+
+        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100">
+          <span class="material-symbols-outlined">compress</span>
+          <span>Compress PDF</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    
+
+  </div>
+</div>

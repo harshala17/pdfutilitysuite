@@ -1,1 +1,28 @@
-<p>header works!</p>
+<header class="bg-white bg-white-700
+               shadow-sm shadow-black/10
+               dark:shadow-black/30">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
+    <!-- Logo -->
+    <div class="flex items-center gap-2 cursor-pointer">
+      <img src="assets/pdfutilitysuitelogo.png" alt="Logo" class="h-8 w-auto cursor-pointer" />
+      <span class="font-semibold text-lg flex gap-1">
+        <span class="uppercase text-gray-900 dark:text-gray"> PDF </span>
+        <span class="text-gray-900 dark:text-gray"> Utility </span>
+        <span
+          class="bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent font-bold"
+        >
+          Suite
+        </span>
+      </span>
+    </div>
+    <!-- Theme Toggle -->
+    <button
+      (click)="toggleTheme()"
+      class="relative group rounded-full p-2 text-gray-900 hover:text-gray hover:bg-gray/10 transition"
+      aria-label="Toggle theme"
+    >
+      <!-- Moon Icon -->
+      <span class="material-symbols-outlined"> dark_mode </span>
+    </button>
+  </div>
+</header>

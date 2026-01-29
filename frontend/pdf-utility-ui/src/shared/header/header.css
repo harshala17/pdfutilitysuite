@@ -1,0 +1,36 @@
+/* .tooltip {
+  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.theme-toggle:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+  .tooltip::after {
+    bottom: auto;
+    top: 100%;
+    border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
+  }
+
+  .theme-toggle:hover .tooltip {
+    transform: translateX(-50%) translateY(-5px);
+  } */
+
+/* Larger screens */
+@media (min-width: 769px) {
+  .tooltip {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}

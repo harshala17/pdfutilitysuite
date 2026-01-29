@@ -1,67 +1,78 @@
-<div class="grid min-h-screen font-sans">
-  <app-header class="z-50" (toggleSidebarEvent)="toggleSidebar()"></app-header>
-  <div class="grid" [ngClass]="isSidebarOpen ? 'grid-cols-[260px_1fr]' : 'grid-cols-[1fr]'">
+<div class="flex flex-col min-h-screen font-sans">
+  <app-header class="z-50 flex-shrink-0" (toggleSidebarEvent)="toggleSidebar()"></app-header>
+  
+  <div class="flex flex-col lg:flex-row flex-1 overflow-hidden">
+    <!-- Mobile Overlay Backdrop -->
     @if (isSidebarOpen) {
-    <aside class="py-5 shadow-sm shadow-black/30
-               dark:shadow-white/60 
-     ">
-      <p class="px-5 mb-4 text-xs font-semibold tracking-wide text-gray-400 uppercase">
-        Convert to PDF
-      </p>
+    <div class="hidden lg:block absolute inset-0 bg-black/50 z-30" (click)="toggleSidebar()"></div>
+    }
+    
+    <!-- Sidebar -->
+    @if (isSidebarOpen) {
+    <aside class="w-full lg:w-60 bg-white dark:bg-gray-800 overflow-y-auto lg:relative z-40 lg:z-auto lg:border-r lg:border-gray-200 lg:dark:border-gray-700">
+      <div class="p-5">
+        <p class="px-5 mb-4 text-xs font-semibold tracking-wide text-gray-400 uppercase">
+          Convert to PDF
+        </p>
 
-      <nav class="space-y-1 mb-6">
-        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-          <span class="material-symbols-outlined">docs</span>
-          <span>Excel to PDF</span>
-        </a>
+        <nav class="space-y-1 mb-6">
+          <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+            <span class="material-symbols-outlined">docs</span>
+            <span>CSV to PDF</span>
+          </a>
 
-        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-          <span class="material-symbols-outlined">table</span>
-          <span>Word to PDF</span>
-        </a>
+          <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+            <span class="material-symbols-outlined">table</span>
+            <span>Word to PDF</span>
+          </a>
 
-        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-          <span class="material-symbols-outlined">imagesmode</span>
-          <span>Image to PDF</span>
-        </a>
-      </nav>
+          <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+            <span class="material-symbols-outlined">imagesmode</span>
+            <span>Image to PDF</span>
+          </a>
+        </nav>
 
-      <p class="px-4 mb-2 text-xs font-semibold tracking-wide text-gray-400 uppercase">
-        PDF Tools
-      </p>
+        <p class="px-4 mb-2 text-xs font-semibold tracking-wide text-gray-400 uppercase">
+          PDF Tools
+        </p>
 
-      <nav class="space-y-1">
-        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-          <svg class="h-5 w-5 text-gray-700  dark:text-white dark:hover:bg-gray-700" viewBox="0 0 23 23" fill="none" stroke="currentColor" stroke-width="1.8"
-            stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="6" height="6" rx="1.5" />
-            <rect x="15" y="3" width="6" height="6" rx="1.5" />
-            <rect x="9" y="15" width="6" height="6" rx="1.5" />
-            <path d="M6 9v3a3 3 0 003 3h6a3 3 0 003-3V9" />
-          </svg>
-          <span class="px-1">Merge PDF</span>
-        </a>
+        <nav class="space-y-1">
+          <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+            <svg class="h-5 w-5 text-gray-700 dark:text-white" viewBox="0 0 23 23" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="6" height="6" rx="1.5" />
+              <rect x="15" y="3" width="6" height="6" rx="1.5" />
+              <rect x="9" y="15" width="6" height="6" rx="1.5" />
+              <path d="M6 9v3a3 3 0 003 3h6a3 3 0 003-3V9" />
+            </svg>
+            <span class="px-1">Merge PDFs</span>
+          </a>
 
-        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-          <span class="material-symbols-outlined">delete</span>
-          <span>Remove PDF</span>
-        </a>
+          <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+            <span class="material-symbols-outlined">delete</span>
+            <span>Remove Pages</span>
+          </a>
 
-        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-          <span class="material-symbols-outlined">swap_vert</span>
-          <span>Reorder Pages</span>
-        </a>
+          <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+            <span class="material-symbols-outlined">swap_vert</span>
+            <span>Reorder Pages</span>
+          </a>
 
-        <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-          <span class="material-symbols-outlined">compress</span>
-          <span>Compress PDF</span>
-        </a>
-      </nav>
+          <a href="#" class="flex items-center gap-3 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+            <span class="material-symbols-outlined">compress</span>
+            <span>Compress PDF</span>
+          </a>
+        </nav>
+      </div>
     </aside>
-    @if (isHighlighted) {
-    <div class="tooltip">✨ Explore all tools here! ✨</div>
     }
-    }
-    <app-landing-page (openSidebarEvent)="openSidebar()"></app-landing-page>
+    
+    <!-- Main Content -->
+    <main class="flex-1 overflow-y-auto w-full">
+      @if (isHighlighted) {
+      <div class="tooltip">✨ Explore all tools here! ✨</div>
+      }
+      <app-landing-page (openSidebarEvent)="openSidebar()"></app-landing-page>
+    </main>
   </div>
 </div>

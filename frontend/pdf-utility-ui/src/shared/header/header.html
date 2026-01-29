@@ -1,13 +1,13 @@
 <header class="shadow-sm shadow-black/30
                dark:shadow-white/30">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-1 sm:py-2">
     <!-- Logo -->
-    <div class="flex items-center gap-2 cursor-pointer">
-      <span class="material-symbols-outlined pr-4 cursor-pointer" (click)="toggleSidebar()">
+    <div class="flex items-center gap-1 sm:gap-2 cursor-pointer">
+      <span class="material-symbols-outlined pr-2 sm:pr-4 cursor-pointer" (click)="toggleSidebar()">
         menu
       </span>
-      <img src="assets/pdfutilitysuitelogo.png" alt="Logo" class="h-8 w-auto cursor-pointer" />
-      <span class="font-semibold text-lg flex gap-1">
+      <img src="assets/pdfutilitysuitelogo.png" alt="Logo" class="h-6 sm:h-8 w-auto cursor-pointer" />
+      <span class="font-semibold text-base sm:text-lg flex gap-1">
         <span class="uppercase text-gray-900 dark:text-white"> PDF </span>
         <span class="text-gray-900 dark:text-white"> Utility </span>
         <span class="bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent font-bold">
@@ -18,11 +18,11 @@
     <!-- Theme Toggle -->
      <button
             (click)="theme.toggle()"
-            class="px-5 py-3 
-           hover:scale-105 transition cursor-pointer">
+            class="theme-toggle px-3 py-2 sm:px-5 sm:py-3 
+           hover:scale-105 transition cursor-pointer relative">
            
            {{ theme.isDark() ? '🌙 ' : '☀️ ' }}
-           
+           <!-- <span class="tooltip dark:text-white">{{ theme.isDark() ? 'nox' : 'lumos' }}</span> -->
           </button>
   </div>
 </header>

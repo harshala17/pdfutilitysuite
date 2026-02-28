@@ -1,8 +1,6 @@
 package com.file_processing.controller;
 
 import com.file_processing.service.PDFService;
-import com.file_processing.validators.annotations.ValidCSVOrExcel;
-import com.file_processing.validators.annotations.ValidImages;
 import com.file_processing.validators.annotations.ValidPDF;
 import com.file_processing.validators.annotations.ValidPDFs;
 import jakarta.validation.constraints.NotEmpty;
@@ -11,7 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;

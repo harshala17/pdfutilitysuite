@@ -31,6 +31,23 @@ public class BaseFileService {
             .body(data);
     }
 
+    protected ResponseEntity<byte[]> getCsvResponse(byte[] data) {
+        var headers = new HttpHeaders();
+
+        // Set Media Type for CSV
+        headers.setContentType(MediaType.parseMediaType("text/csv"));
+
+        // Set Content-Disposition to trigger browser download
+        headers.setContentDispositionFormData("attachment", "data.csv");
+
+        // Important for large files to hint the size to the client
+        headers.setContentLength(data.length);
+
+        return ResponseEntity.ok()
+            .headers(headers)
+            .body(data);
+    }
+
     protected ResponseEntity<byte[]> getPdfResponse(ByteArrayOutputStream out, String filename) {
         var headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_PDF);
@@ -78,47 +95,6 @@ public class BaseFileService {
             }
         } finally {
             tempFile.delete(); // 4. Mandatory cleanup
-        }
-    }
-
-    @SneakyThrows
-    protected void isValidFileLength(MultipartFile[] files) {
-        if (files == null || files.length < 2) {
-            throw new InvalidRequestException(AppError.INVALID_REQUEST_EXCEPTION, "Minimum two files required.");
-        }
-    }
-
-    @SneakyThrows
-    private byte[] convertDocument(MultipartFile file, String targetExtension) {
-        File tempFile = File.createTempFile("gotenberg_", "_" + file.getOriginalFilename());
-        file.transferTo(tempFile);
-
-        try {
-            var pageProps = new LibreOfficePageProperties.Builder()
-                .addSkipEmptyPages(true)
-                .addExportNotesInMargin(false)
-                .build();
-
-            var options = new LibreOfficeOptions.Builder()
-                .addLosslessImageCompression(true)
-                .build();
-
-            // Use the Jotenberg client to perform the conversion
-            var client = new Jotenberg(gotenbergURL);
-            try (var response = client.convertWithLibreOffice(
-                Collections.singletonList(tempFile), pageProps, options)) {
-
-                if (response.getStatusLine().getStatusCode() != 200) {
-                    throw new RuntimeException("Gotenberg conversion failed with status: " + response.getStatusLine().getStatusCode());
-                }
-
-                try (var out = new ByteArrayOutputStream()) {
-                    response.getEntity().getContent().transferTo(out);
-                    return out.toByteArray();
-                }
-            }
-        } finally {
-            tempFile.delete(); // Cleanup
         }
     }
 }

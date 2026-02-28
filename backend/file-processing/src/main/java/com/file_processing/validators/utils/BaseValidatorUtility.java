@@ -39,6 +39,17 @@ public class BaseValidatorUtility {
         return isCsv || isXlsx || hasCsvExt || hasExcelExt;
     }
 
+    public static boolean isValidCSV(MultipartFile file) {
+        var contentType = file.getContentType();
+        var filename = file.getOriginalFilename() != null ? file.getOriginalFilename().toLowerCase() : "";
+
+        // Check Content-Types
+        var isCsv = "text/csv".equalsIgnoreCase(contentType) || "application/vnd.ms-excel".equalsIgnoreCase(contentType);
+        var hasCsvExt = filename.endsWith(".csv");
+
+        return isCsv || hasCsvExt;
+    }
+
     public static boolean isValidPDF(MultipartFile file) {
         return "application/pdf".equalsIgnoreCase(file.getContentType());
     }
